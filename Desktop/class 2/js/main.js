@@ -1,23 +1,73 @@
-document.getElementById("george").innerHTML = "Hi I am George"; 
 
-document.getElementsByClassName("classy")[0].innerHTML = "i'm soooo classy"; 
+// document.getElementById("george").innerHTML = "Hi I am George"; 
+
+// document.getElementsByClassName("classy")[0].innerHTML = "i'm soooo classy"; 
 
 document.getElementsByTagName("p")[0].innerHTML = "Hi!"; 
 
-document.querySelector("div").innerHTML = "Divtastic!"; 
+// document.querySelector("div").innerHTML = "Divtastic!"; 
 
-document.querySelector(".classy").innerHTML = "Addition & Subtraction"; 
+// document.querySelector(".classy").innerHTML = "Addition & Subtraction"; 
 
-document.querySelector("#george").innerHTML = " WELCOME TO YOUR CALCULATOR"; 
+// document.querySelector("#george").innerHTML = " WELCOME TO YOUR CALCULATOR"; 
 
-document.createElement("P");
+// document.createElement("P");
+
+const this_btn = document.getElementById("clickMe");
+
+const add_btn = document.getElementById("add");
+const sub_btn = document.getElementById("sub");
+const mult_btn = document.getElementById("mult");
+const div_btn = document.getElementById("div");
+
+const output = document.getElementById("output");
 
 // document.creatElement("resetButton").innerHTML =
 
 //custom function that is called when the button is clicked
-function clickMe(){
-	alert("Welcome! This is a calculator!");
-}
+// function clickMe(){
+// 	alert("Welcome! This is a calculator!");
+// }
+
+this_btn.addEventListener("click",anyClick);
+that_btn.addEventListener("click",anyClick);
+other_btn.addEventListener("click",anyClick);
+
+add_btn.addEventListener("click",anyClick);
+sub_btn.addEventListener("click",anyClick);
+mult_btn.addEventListener("click",anyClick);
+div_btn.addEventListener("click",anyClick);
+// that_btn.addEventListener("click",anyClick);
+// other_btn.addEventListener("click",anyClick);
+
+function anyClick(e){
+
+	//identify which button sent the event
+   let btn = e.target.id; 
+   console.log(btn);
+
+   if(btn == "clickMe"){
+   		output.innerHTML = "How are ya";
+   }
+};
+
+function anyClick(e){
+
+	//identify which button sent the event
+   let btn = e.target.id; 
+   console.log(btn);
+
+   if(btn == "add"){
+   		output.innerHTML = "ADDED";
+   }else if(btn == "sub"){
+		output.innerHTML = "SUBTRACTED";
+   }else if(btn == "mult"){
+		output.innerHTML = "MULTIPLIED";	
+   }else if(btn == "div"){
+		output.innerHTML = "DIVIDED";	
+   }
+};
+
 
 //global variables
 	//for adding
