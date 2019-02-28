@@ -1,8 +1,4 @@
-//how to define a class
-//name ex. class Superhero{
-//data String realName; 
-//methods void protectPeople(){}
-//constructor power = "invisibility" 
+//Switch not working
 
 int sceneNumber = 0;
 int plantNumber = 0;
@@ -141,6 +137,5 @@ void scene2() {
 }
 
 //void plant2() {
-//  //CAR
 
 //}
