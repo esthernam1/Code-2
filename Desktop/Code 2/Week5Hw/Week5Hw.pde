@@ -12,7 +12,13 @@ void setup() {
 
   //daryl = new Plant (int(random(100, 400)));
   //eugene = new Plant (int(random(100, 400)));
-
+  
+for (int i=0; i<garden.length; i++) {
+    garden[i] = new Plant(int(random(10, 700)), 2+(i*3));
+  }
+  for (int i=0; i<rainz.length; i++) {
+    rainz[i] = new Rain();
+  } 
 }
 
 void draw() {
@@ -76,12 +82,12 @@ void keyPressed() {
 
 void scene0() {
   //BACKGROUND
-  background(180, 220, 250);
+  background(159, 126, 232);
   fill(100);
   rect(0, height*.8, width, height);
-  //for (int i=0; i<rainz.length; i++) {
-  //  rainz[i].displayTop();
-  //} 
+  for (int i=0; i<rainz.length; i++) {
+    rainz[i].displayTop();
+  } 
 
   textSize(20);
   text("Press the spacebar to make it rain", 95, height*.92);
@@ -90,7 +96,7 @@ void scene0() {
 
 void plant0() {
   for (int i=0; i<garden.length; i++) {
-    garden[i].display(2+i*3, color(10, i*20, 50));
+    garden[i].display(2+(i*3), color(10, i*20, 50));
   }
   
    noStroke();
@@ -101,7 +107,7 @@ void plant0() {
  
 void scene1() {
   //BACKGROUND
-  background(138, 180, 216);
+  background(232, 126, 126);
   fill(100);
   rect(0, height*.8, width, height);
   for (int i=0; i<rainz.length; i++) {
@@ -132,8 +138,8 @@ void scene2() {
 
   fill(255);
   textSize(20);
-  text("Press the spacebar to change time of day!", 95, height*.92);
-  text("Press right arrow to change car speed/direction", 70, height*.97);
+  text("Press the spacebar to make it rain", 95, height*.92);
+  text("Press up arrow to make plants GROW", 70, height*.97);
 }
 
 //void plant2() {
