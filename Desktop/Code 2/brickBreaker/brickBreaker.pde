@@ -3,9 +3,8 @@ int w = 50;
 int h = 25; 
 boolean collision = false;
 int score;
-float startTime = 30;
+float startTime = 20;
 float ellapsedTime;
-
 
 Ball b; 
 Paddle p; 
@@ -22,6 +21,7 @@ void setup() {
 
   b = new Ball(width/2, height*.75, random(3, 5), random(-5, -4)); 
   p = new Paddle(); 
+
 
   for (int i = 0; i<cols; i++) {
     for (int j = 0; j<rows; j++) {
@@ -54,11 +54,11 @@ void draw() {
   //if (b.pos.x - b.size/2 >= p.x + b.size/2 && b.pos.y + b.size/2 >= (p.y - b.size/2 +p.h)) { 
   //  b.paddleBounce();
   //}
-  
-  if(b.pos.x > p.x && b.pos.x < p.x + p.w /*X size*/ &&
-     b.pos.y > p.y && b.pos.y < p.y + p.h /*Y size*/)
+
+  if (b.pos.x > p.x && b.pos.x < p.x + p.w /*X size*/ &&
+    b.pos.y > p.y && b.pos.y < p.y + p.h /*Y size*/)
   {
-    b.paddleBounce(); 
+    b.paddleBounce();
   }
 
   //breaking bricks 
@@ -73,7 +73,7 @@ void draw() {
         && b.pos.y - b.size/2<= (myBricks[i][j].y + myBricks[i][j].h/2) && b.pos.y +b.size/2>= (myBricks[i][j].y - myBricks[i][j].h/2)) 
       {
         if (myBricks[i][j].o == 0) continue;
-
+ 
         myBricks[i][j].o = 0;  //just changing the opacity here but you can figure out how to remove the object using an array list
         collision = true;
         score++;
@@ -81,38 +81,24 @@ void draw() {
     }
   }
 
-
   String printScore = (" score: " + score);
-  text(printScore, 30, 30);
+  text(printScore, 100, 470);
 
   ellapsedTime = (startTime - (millis()/1000));
+  text(ellapsedTime, 20, 470);
 
   println(ellapsedTime);
   //println("ellapsed : "+ellapsedTime);
-
-
 
   if ((ellapsedTime) < 0) {
 
     println("Working");
     fill(255, 255, 255);
     rect(0, 0, width, height);
-    fill(0,0,0);
-    text("game over", 20, 470);
-  } else
-  {
-    //Timer
-    text(ellapsedTime, 20, 470);
+    fill(0, 0, 0);
+    textSize(40);
+    text("game over", width/2 - 85, height/2);
   }
-
-  //else 
-  //{
-
-  //  startTime = 0;
-  //}
-
-
-
 
 
   if (keyPressed) {
@@ -126,6 +112,7 @@ void draw() {
     }
   }
 }
+
 
 void keyPressed() 
 {
