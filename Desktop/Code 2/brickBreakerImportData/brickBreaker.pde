@@ -6,6 +6,9 @@ int score;
 float startTime = 20;
 float ellapsedTime;
 
+int [] x = new int [0];
+int [] y = new int [0];
+
 Ball b; 
 Paddle p; 
 Bricks myBricks [][]; //setting up a 2D grid to store instances of our bricks
@@ -114,6 +117,15 @@ void draw() {
 }
 
 
-void keyPressed() 
-{
+void keyPressed(){
+  if(key == 's'){
+    String [] lines = new String [x.length];
+    
+    for(int i = 0; i < x.length; i++){
+      lines[i] = x[i] + "/t" + y[i];
+    }
+    
+    saveStrings("lines.txt", lines);
+    exit();
+  }
 }

@@ -1,8 +1,6 @@
 //declare class type
 //need double square brackets bc its a 3d array
 
-PrintWriter output;
-
 int w = 50;
 int h = 25;
 int cols, rows;
@@ -22,7 +20,6 @@ void setup() {
       myBricks[i][j] = new Bricks((i*w)+5, (j*h)+5, w-10, h-10);
     }
   }
-  output= createWriter("score.txt");
 }
 
 void draw() {
@@ -35,6 +32,4 @@ void draw() {
      
     }
   }
-}
-void keyPressed() {
 }
