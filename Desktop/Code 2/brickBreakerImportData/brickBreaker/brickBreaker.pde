@@ -6,6 +6,9 @@ int score;
 float startTime = 20;
 float ellapsedTime;
 
+int scores[] = new int[0];
+String oldScores;
+
 int [] x = new int [0];
 int [] y = new int [0];
 
@@ -19,6 +22,9 @@ void setup() {
   rows = int((height*.5)/h); 
 
   noStroke(); 
+
+oldScores = loadStrings("scores.csv");
+
 
   myBricks = new Bricks[cols][rows]; 
 
@@ -101,6 +107,13 @@ void draw() {
     fill(0, 0, 0);
     textSize(40);
     text("game over", width/2 - 85, height/2);
+    
+    scores = append(scores, score);
+    
+    oldScores = append(oldScores, str(score));
+    
+    //saveStrings("scores.csv", str(scores)); //saves a csv file full of NULL
+    //exit();
   }
 
 
@@ -116,16 +129,20 @@ void draw() {
   }
 }
 
-
-void keyPressed(){
-  if(key == 's'){
-    String [] lines = new String [x.length];
-    
-    for(int i = 0; i < x.length; i++){
-      lines[i] = x[i] + "/t" + y[i];
-    }
-    
-    saveStrings("lines.txt", lines);
-    exit();
-  }
+void saveScore(){
+  saveStrings("scores.csv", oldScores);
+      exit();
 }
+
+//void keyPressed(){
+//  if(key == 's'){
+//    String [] lines = new String [x.length];
+    
+//    for(int i = 0; i < x.length; i++){
+//      lines[i] = x[i] + "/t" + y[i];
+//    }
+    
+//    saveStrings("lines.txt", lines);
+//    exit();
+//  }
+//}
