@@ -19,7 +19,7 @@ int columns, rows;
 
 
 Ball b;
-Paddle p;s
+Paddle p;
 
 Bricks myBricks [][];
 
