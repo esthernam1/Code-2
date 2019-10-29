@@ -1,0 +1,136 @@
+@font-face {
+    src:url("GT-America-Trial-Regular.otf");
+    font-family: "GTAmerica-Regular";
+  }
+
+body{
+    background-color: white;
+    font-family: "GTAmerica-Regular";
+}
+html{
+    font-family: "GTAmerica-Regular";
+}
+.heading{
+    font-size: 100px;
+    color: black;
+    /* width:65%; */
+    position: absolute;
+    /* font-weight: 600; */
+    padding: 30px 0px 0px 130px;
+    /* border: 4px green  dotted; */
+    z-index: 1;
+  }
+  #subheading{
+    position: absolute;
+    z-index: 1;
+    top:20%;
+    font-size: 25px;
+    margin-left: 10%;
+  }
+
+video{
+    max-width:60%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    z-index: 3;
+    margin-right:20vw;
+}
+
+#grid-container {
+    display: block;
+    position: absolute;
+    grid-template-columns: auto auto auto;
+    padding: 0px 0px 0px 140px;
+    width:80%;
+    align-items: center;
+    /* border: 3px green dotted; */
+    top:35%;
+    padding-top: 4em;
+  }
+  #grid-container-work {
+    display: block;
+    position: absolute;
+    grid-template-columns: auto auto auto;
+    padding: 0px 0px 0px 140px;
+    width:90%;
+    align-items: center;
+    /* border: 3px green dotted; */
+    top:30%;
+  }
+  .grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-left:0px;
+    border-right:0px;
+    padding: 50px;
+    font-size: 70px;
+    text-align: left;
+    height:55px;
+    position: relative;
+    /* background-color: white; */
+  }
+  /* .grid-item:hover{
+    transition: all .5s ease-in-out;
+    height:500px;
+    transform: scale(1.0);
+    z-index: 2;
+    /* background-color: white; */
+  /* } */ 
+
+  #vid-1{
+      margin-left:70%;
+      font-size: 40px;
+  }
+  #vid-2{
+    margin-left:80%;
+    font-size: 40px;
+}
+#vid-3{
+    margin-left:75%;
+    font-size: 35px;
+}
+
+/* .videoOne{
+    top:50%;
+    left:10%;
+} */
+
+.collapsible {
+    font-family: "GTAmerica-Regular";
+    color: #151515;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    width: 100%;
+    border: none;
+    border-top: solid #151515 2px;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
+    /* background-color: white; */
+  }
+  
+  .collapsible:hover {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+  
+  .content {
+    display: none;
+    overflow: hidden;
+    border: none;
+    width: 90vw;
+  }
+
+  .tall {
+    display: block;
+    position: flex;
+    margin-left:auto;
+    margin-right: auto;
+    width: 70%;
+    height: 20vw;
+  }
+  /* .hide {
+	display: none;
+	height: 10vw;
+ } */
